@@ -1,0 +1,12 @@
+body{
+  background-color: pink;
+}
+
+.c1 > span{
+  font-weight: bold;
+}
+
+#desplazamiento{
+  position: absolute;
+  left: 10px;
+}
