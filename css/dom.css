@@ -10,3 +10,11 @@ body{
   position: absolute;
   left: 10px;
 }
+
+.borde{
+  border: 2px solid blue;
+}
+
+.negrita{
+  font-weight: bold;
+}

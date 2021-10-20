@@ -48,3 +48,58 @@ function ejecutar(){
 
 
 }
+
+function construir(){
+  //console.log('Construyo');
+  let div = document.getElementsByClassName('borde')[0];
+  //console.log(div);
+  ////// innerHTML es muy lento y no se suele usar
+  //div.innerHTML = '<p>Este es un texto <span class="negrita">en negrita</span>.</p>';
+  //P
+  let p = document.createElement('p');
+  div.appendChild(p); //Se suele asignar el hijo al padre nadamás se cree el hijo
+  //NODO TEXTO P
+  let nodotexto = document.createTextNode('Este es un texto');
+  p.appendChild(nodotexto);
+
+  //SPAN
+  let span = document.createElement('span');
+  p.appendChild(span);
+  span.classList.add('negrita');
+  span.classList.add('borde');
+  //NODO TEXTO SPAN
+  nodotexto = document.createTextNode(' en negrita');
+  span.appendChild(nodotexto);
+
+  //NODO TEXTO P
+  nodotexto = document.createTextNode('.');
+  p.appendChild(nodotexto);
+
+  //nodoPadre.insertBefore(nodoAintroducir, nodoReferencia);
+  //IMG
+  let img = document.createElement('img');
+  div.insertBefore(img, p);
+  //Crear atributo src
+  img.setAttribute('src', 'img/cacatua.jpg');
+  //img.src = 'img/cacatua.jpg'; //A veces funciona elemento.atributo = valor, con según que elemento y que atributo
+
+}
+
+function destruir(){
+
+  let div = document.getElementsByClassName('borde')[0];
+  let p = document.querySelector('.borde > p');
+  //console.log(p.innerHTML);
+  //div.removeChild(p); //Así le indicamos al padre que mate al hijo
+  p.remove();
+
+}
+
+function destruirTodo(){
+
+  let div = document.getElementsByClassName('borde')[0];
+  while(div.firstElementChild){
+    div.firstElementChild.remove()
+  }
+
+}
